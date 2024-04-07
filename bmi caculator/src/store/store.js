@@ -8,11 +8,11 @@ export const useBMIStore = defineStore({
     weight: ref(0), // Using ref for reactive weight
   }),
   getters: {
-    // Optionally, you can define computed properties (getters) here
-    // For example, you can calculate BMI as a getter
+    // Define a computed property (getter) to calculate BMI
     bmi() {
-      const heightInMeters = this.height / 100; // Convert height to meters
-      return this.weight / (heightInMeters * heightInMeters);
+      const heightInMeters = this.height.value / 100; // Convert height to meters
+      const bmiValue = this.weight.value / (heightInMeters * heightInMeters);
+      return isNaN(bmiValue) ? 0 : bmiValue; // Handle NaN case gracefully
     }
   },
   actions: {

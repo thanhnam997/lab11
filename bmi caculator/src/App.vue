@@ -8,7 +8,8 @@
   
   <script setup>
   import BodyMassIndexForm from './components/BodyMassindexform.vue';
-import { useBMIStore } from './store';
+  import { useBMIStore } from '../store.js';
+  import { computed, watchEffect } from 'vue'; // Import computed and watchEffect from Vue
   
   const bmiStore = useBMIStore();
   
@@ -17,6 +18,7 @@ import { useBMIStore } from './store';
     bmiStore.calculateBMI();
   });
   
+  // Use computed to get reactive bmi value
   const bmi = computed(() => bmiStore.bmi);
   </script>
   

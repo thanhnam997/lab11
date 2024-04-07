@@ -8,10 +8,12 @@
   </template>
   
   <script setup>
-  import { useBMIStore } from '../store';
+  import { useBMIStore } from '../store.js'
+  import { computed } from 'vue'; // Import computed from Vue
   
   const bmiStore = useBMIStore();
   
+  // Use computed to get reactive height and weight values
   const height = computed(() => bmiStore.height);
   const weight = computed(() => bmiStore.weight);
   
