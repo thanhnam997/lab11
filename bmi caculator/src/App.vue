@@ -7,11 +7,12 @@
   </template>
   
   <script setup>
-  import BodyMassIndexForm from './components/BodyMassindexform.vue';
-  import { useBMIStore } from './BMIstore.js'
+  import { useBMIStore } from './BMIStore.js';
+import BodyMassIndexForm from './components/BodyMassindexform.vue';
+
   import { computed, watchEffect } from 'vue'; // Import computed and watchEffect from Vue
   
-  const bmiStore = useBMIStore();
+  const bmiStore= useBMIStore();
   
   // Watch for changes in height and weight and recalculate BMI
   watchEffect(() => {

@@ -1,4 +1,5 @@
-import { defineStore } from "Pinia"; // Correct import statement for Pinia
+import { defineStore } from "Pinia";
+
 import { ref } from 'vue';
 
 export const useBMIStore = defineStore({
