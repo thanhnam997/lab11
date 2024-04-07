@@ -7,7 +7,7 @@
   </template>
   
   <script setup>
-  import BodyMassIndexForm from './components/BodyMassindexForm.vue';
+  import BodyMassIndexForm from './components/BodyMassindexform.vue';
 import { useBMIStore } from './store';
   
   const bmiStore = useBMIStore();
