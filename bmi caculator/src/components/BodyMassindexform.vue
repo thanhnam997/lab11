@@ -8,7 +8,7 @@
   </template>
   
   <script setup>
-  import { useBMIStore } from '../BMIstore';
+  import { useBMIStore } from '../BMIstore.js';
   import { computed } from 'vue';
   
   const bmiStore= useBMIStore();
