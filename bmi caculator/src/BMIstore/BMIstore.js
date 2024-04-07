@@ -1,4 +1,4 @@
-import { defineStore } from "Pinia";
+import { defineStore } from "pinia";
 
 import { ref } from 'vue';
 

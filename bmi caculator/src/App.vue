@@ -7,13 +7,14 @@
   </template>
   
   <script setup>
-  import { useBMIStore } from './BMIStore.js';
+  import { storeToRefs } from 'pinia';
+import { useBMIStore } from './BMIStore.js';
 import BodyMassIndexForm from './components/BodyMassindexform.vue';
 
   import { computed, watchEffect } from 'vue'; // Import computed and watchEffect from Vue
   
   const bmiStore= useBMIStore();
-  
+  const {calculateBMI}=storeToRefs
   // Watch for changes in height and weight and recalculate BMI
   watchEffect(() => {
     bmiStore.calculateBMI();
