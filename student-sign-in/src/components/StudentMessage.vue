@@ -2,7 +2,7 @@
 
 
 import { storeToRefs } from 'pinia'
-import { useStudentStore } from '../stores/StudentStore.js'
+import { useStudentStore } from './StudentStore.js'
 const studentStore = useStudentStore()
 
 const { mostRecentStudent } = storeToRefs(studentStore)
