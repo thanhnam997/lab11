@@ -8,7 +8,7 @@ const studentStore = useStudentStore()
 
 // Define reactive variables for new student name, Star ID, and form errors
 
-const newStudentName = ref('')
+
 const newStudentName = ref('')
 const newStarID = ref('')
             
