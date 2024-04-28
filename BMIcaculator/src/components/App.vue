@@ -16,15 +16,17 @@ export default {
     BmiCalculator,
   },
   setup() {
-    const bmiStore = useBmiStore();
-    const bmi = computed(() => bmiStore.bmi);
+    const bmiStore = useBmiStore();// Access the BMI store instance
+    const bmi = computed(() => bmiStore.bmi);// Computed property for BMI from the store
 
     const handleWeightUpdate = (newValue) => {
-      bmiStore.updateWeight(newValue);
+      // Function to handle weight updates from the BMI Calculator component
+      bmiStore.updateWeight(newValue); // Update weight in the store
     };
 
     const handleHeightUpdate = (newValue) => {
-      bmiStore.updateHeight(newValue);
+      // Function to handle height updates from the BMI Calculator component
+      bmiStore.updateHeight(newValue);// Update height in the store
     };
 
     return {

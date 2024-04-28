@@ -23,12 +23,12 @@ import { watch } from 'vue'; // Import watch here
 
 export default {
   setup() {
-    const bmiStore = useBmiStore();
+    const bmiStore = useBmiStore(); // Define computed properties to access weight, height, and BMI from the store
 
     const weight = computed(() => bmiStore.weight);
     const height = computed(() => bmiStore.height);
     const bmi = computed(() => bmiStore.bmi);
-
+ // Watch for changes in weight or height and trigger BMI calculation
     watch([weight, height], () => {
       bmiStore.calculateBmi(); // Trigger calculation on weight/height change
     });
