@@ -13,13 +13,13 @@
 
 
 <script setup>
-import { useBMIStore } from '../store/bmiStore';
-import { storeToRefs } from 'pinia';
-import { watch } from 'vue'; // Import watch here
+import { useBMIStore } from '../store/bmiStore'; // Import the useBMIStore function from the Pinia store
+import { storeToRefs } from 'pinia';   // Import the storeToRefs function from Pinia
+import { watch } from 'vue'; // Import the watch function from Vue
+const bmiStore = useBMIStore(); // Get the Pinia store instance
+const { weight, height } = storeToRefs(bmiStore); // Extract the weight and height reactive references from the store
 
-const bmiStore = useBMIStore();
-const { weight, height } = storeToRefs(bmiStore);
-
+// Watch for changes to weight and height, and call the calculateBMI function from the store
 watch([weight, height], () => {
   bmiStore.calculateBMI();
 });

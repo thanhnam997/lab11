@@ -2,11 +2,14 @@ import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
 
 export const useBMIStore = defineStore('bmi', () => {
+   // Reactive references for weight, height, bmi, and bmiCategory
   const weight = ref(null);
   const height = ref(null);
   const bmi = ref(null);
   const bmiCategory = ref(null);
 
+ 
+ // Function to calculate BMI based on weight and height
   const calculateBMI = () => {
     if (weight.value && height.value) {
       const heightInMeters = height.value / 100;
@@ -17,7 +20,7 @@ export const useBMIStore = defineStore('bmi', () => {
       bmiCategory.value = null;
     }
   };
-
+// Function to determine the BMI category based on the calculated BMI value
   const determineBMICategory = (bmi) => {
     if (bmi < 18.5) {
       bmiCategory.value = 'Underweight';
@@ -29,7 +32,7 @@ export const useBMIStore = defineStore('bmi', () => {
       bmiCategory.value = 'Obese';
     }
   };
-
+ // Return the reactive references and functions from the store
   return {
     weight,
     height,

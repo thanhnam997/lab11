@@ -10,11 +10,11 @@
 </template>
 
 <script setup>
-import BodyMassIndexForm from './components/BMIcaculator.vue';
-import { useBMIStore } from './store/bmiStore';
-import { storeToRefs } from 'pinia';
+import BodyMassIndexForm from './components/BMIcaculator.vue';// Import the BodyMassIndexForm component
+import { useBMIStore } from './store/bmiStore'; // Import the useBMIStore function from the Pinia store
+import { storeToRefs } from 'pinia';// Import the storeToRefs function from Pinia
 
-const bmiStore = useBMIStore();
-const { bmi, bmiCategory } = storeToRefs(bmiStore);
+const bmiStore = useBMIStore();// Get the Pinia store instance
+const { bmi, bmiCategory } = storeToRefs(bmiStore);    // Extract the bmi and bmiCategory reactive references from the store  
+
 </script>
-
